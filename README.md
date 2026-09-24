@@ -3,6 +3,8 @@
 
 **SFZ2A-DASH-CPS2 Project · GOLD Test 15 · 23 September 2026**
 
+**THIS REVISION IS STILL IN BETA. CERTAIN ASPECTS OR MECHANICS TIED TO CAMMY'S CHARACTER HAVE YET TO BE FULLY IMPLEMENTED.**
+
 This project brings Alpha 2 Gold's Cammy, character data, presentation and story into the native CPS2 version of **Street Fighter Zero 2 Alpha**, using the decrypted `sfz2ald` ROM set. The result runs through the arcade game's own 68000 code, graphics system, inputs and QSound hardware interface. The current release includes the repaired graphics allocation, direct USA boot and removal of the Phoenix startup screen and region selector.
 
 The goal is a faithful arcade recreation of the Gold experience. Its strongest claim is that Cammy's implementation is grounded in recovered Gold data and executable behavior, with native arcade integration and repeatable validation. **It is not yet established as a perfect, complete port of every Gold rule, roster change or console feature.** The broader engine and roster remain based on SFZ2A except where the project explicitly changes them. “GOLD Edition” is this project's edition name, not an official Capcom arcade release.
