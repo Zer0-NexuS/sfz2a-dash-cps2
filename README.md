@@ -1,7 +1,15 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
 # Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction
 
-**SFZ2A-DASH-CPS2 Project · GOLD Test 15 · 23 September 2026**
+# Stock sfz2ald to GOLD Test 18
+
+Recommended: extract this package, then run:
+
+The script applies standard IPS patches to the individual ROM members. It accepts differently packed stock ZIPs when their ROM contents match, verifies every base and output member, and writes a new sfz2ald.zip. It never overwrites your source.
+
+For a conventional IPS patcher, apply **SFZ2A_GOLD_Test_18.ips directly to the stock ZIP**, without extracting it. This standalone archive patch requires the exact source ZIP hash in patch_manifest.json. Repacked ZIPs must use the script above. The patch includes the standard IPS final-size extension; the patched ZIP hash must match the manifest.
+
+Test 18 restores Final M. Bison on the first Start press at Bison, followed by Cammy on the second. It includes all Test 17 Gold integration changes. The isolated blue-trail square reported on Gen's stage remains unconfirmed. See the included build README for provenance and validation limits.
 
 **THIS REVISION IS STILL IN BETA. CERTAIN ASPECTS OR MECHANICS TIED TO CAMMY'S CHARACTER HAVE YET TO BE FULLY IMPLEMENTED.**
 
@@ -10,8 +18,6 @@ This project brings Alpha 2 Gold's Cammy, character data, presentation and story
 The goal is a faithful arcade recreation of the Gold experience. Its strongest claim is that Cammy's implementation is grounded in recovered Gold data and executable behavior, with native arcade integration and repeatable validation. **It is not yet established as a perfect, complete port of every Gold rule, roster change or console feature.** The broader engine and roster remain based on SFZ2A except where the project explicitly changes them. “GOLD Edition” is this project's edition name, not an official Capcom arcade release.
 
 ## Quick start: upgrade a stock ROM ZIP
-
-Use **`SFZ2A_GOLD_IPS_Upgrade_Test15.zip`**. Extract that package into an ordinary folder first. It contains patches and an upgrade helper; the stock ROM is a separate input.
 
 ### Recommended: automatic ZIP upgrade
 
@@ -35,7 +41,7 @@ The helper verifies all 19 stock members, applies the appropriate IPS patches, t
 
 ### Direct `.ips` application
 
-**`SFZ2A_to_GOLD_Test15_ZIP.ips` patches the stock ZIP file itself.** Select the ZIP as the input in a standard IPS patcher, using its “all files” filter if needed. Do not unzip the ROMs for this particular patch, and do not apply it to an individual ROM chip. Apply it to a copy and retain the output filename `sfz2ald.zip`.
+**`SFZ2A_to_GOLD_TestXX_ZIP.ips` patches the stock ZIP file itself.** Select the ZIP as the input in a standard IPS patcher, using its “all files” filter if needed. Do not unzip the ROMs for this particular patch, and do not apply it to an individual ROM chip. Apply it to a copy and retain the output filename `sfz2ald.zip`.
 
 This direct patch requires the exact stock ZIP fingerprint below. IPS does not validate the input's identity by itself. If your stock ZIP has a different archive hash, use the included helper; it can accept the same underlying ROMs in a repacked ZIP.
 
