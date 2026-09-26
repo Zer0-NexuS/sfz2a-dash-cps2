@@ -1,7 +1,5 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
-# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction
-
-# Stock sfz2ald to GOLD Test 18
+# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD Version 18
 
 Recommended: extract this package, then run:
 
