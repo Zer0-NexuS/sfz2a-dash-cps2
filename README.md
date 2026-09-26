@@ -1,7 +1,13 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
-# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD Version 18
+# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD Version 19
 
 Recommended: extract this package, then run:
+
+#FIXED in V19:
+- Shin Akuma (On Akuma, Tap Start Once)
+- Final M. Bison (On Bison, Tap Start Once)
+- Cammy (On Bison, Tap Start Twice)
+- Evil Ryu (On Ryu, Tap Start Twice)
 
 The script applies standard IPS patches to the individual ROM members. It accepts differently packed stock ZIPs when their ROM contents match, verifies every base and output member, and writes a new sfz2ald.zip. It never overwrites your source.
 
