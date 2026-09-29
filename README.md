@@ -1,17 +1,18 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
-# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD Version 19
+# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD RC
 
 Recommended: extract this package, then run:
 
-#FIXED in V19:
+#FIXED in RC:
 - Shin Akuma (On Akuma, Tap Start Once)
 - Final M. Bison (On Bison, Tap Start Once)
 - Cammy (On Bison, Tap Start Twice)
 - Evil Ryu (On Ryu, Tap Start Twice)
+- Complete Alpha 2 GOLD / DASH Integration
 
 The script applies standard IPS patches to the individual ROM members. It accepts differently packed stock ZIPs when their ROM contents match, verifies every base and output member, and writes a new sfz2ald.zip. It never overwrites your source.
 
-For a conventional IPS patcher, apply **SFZ2A_GOLD_Test_18.ips directly to the stock ZIP**, without extracting it. This standalone archive patch requires the exact source ZIP hash in patch_manifest.json. Repacked ZIPs must use the script above. The patch includes the standard IPS final-size extension; the patched ZIP hash must match the manifest.
+For a conventional IPS patcher, apply **SFZ2A_GOLD_XX.ips directly to the stock ZIP**, without extracting it. This standalone archive patch requires the exact source ZIP hash in patch_manifest.json. Repacked ZIPs must use the script above. The patch includes the standard IPS final-size extension; the patched ZIP hash must match the manifest.
 
 Test 18 restores Final M. Bison on the first Start press at Bison, followed by Cammy on the second. It includes all Test 17 Gold integration changes. The isolated blue-trail square reported on Gen's stage remains unconfirmed. See the included build README for provenance and validation limits.
 
