@@ -9,6 +9,7 @@ Recommended: extract this package, then run:
 - Cammy (On Bison, Tap Start Twice)
 - Evil Ryu (On Ryu, Tap Start Twice)
 - Complete Alpha 2 GOLD / DASH Integration
+- Three Title choice variants, (Original, GOLD, BLUE DASH)
 
 The script applies standard IPS patches to the individual ROM members. It accepts differently packed stock ZIPs when their ROM contents match, verifies every base and output member, and writes a new sfz2ald.zip. It never overwrites your source.
 
