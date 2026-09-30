@@ -1,23 +1,103 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
-# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD RC
+# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD RC2
+
+**THIS IS A FANMADE PATCH**
 
 Recommended: extract this package, then run:
 
-#FIXED in RC:
+#FIXED in RC2:
 - Shin Akuma (On Akuma, Tap Start Once)
 - Final M. Bison (On Bison, Tap Start Once)
 - Cammy (On Bison, Tap Start Twice)
 - Evil Ryu (On Ryu, Tap Start Twice)
 - Complete Alpha 2 GOLD / DASH Integration
 - Three Title choice variants, (Original, GOLD, BLUE DASH)
+- Cammy's voice proper integration
+- Cammy's donor flags gone
+- Corrected Cammy theme volume
+- Pheonix menu re-instated (hold service for 2 seconds when logo appears)
+------
+#KNOWN BUGS
+- Cammy vs Cammy Portrait slow-down
+- Cammy's theme may sound slightly distored
+- Birdie throw mechanism.
+- Cammy dialogue text only in English
 
-The script applies standard IPS patches to the individual ROM members. It accepts differently packed stock ZIPs when their ROM contents match, verifies every base and output member, and writes a new sfz2ald.zip. It never overwrites your source.
+#SHOUT OUT TO LUIZ FOR HELPING IDENTIFY BUGS, THANK YOU!
 
-For a conventional IPS patcher, apply **SFZ2A_GOLD_XX.ips directly to the stock ZIP**, without extracting it. This standalone archive patch requires the exact source ZIP hash in patch_manifest.json. Repacked ZIPs must use the script above. The patch includes the standard IPS final-size extension; the patched ZIP hash must match the manifest.
+Three ready-to-use ROM variants and three matching stock-to-GOLD IPS patches. This release corrects Cammy's stun voice, imports Gold's opponent-specific throw reactions, completes the audited character-property entries, and adds the supplied warning-screen design with **SFZ2'** in its text.
 
-Test 18 restores Final M. Bison on the first Start press at Bison, followed by Cammy on the second. It includes all Test 17 Gold integration changes. The isolated blue-trail square reported on Gen's stage remains unconfirmed. See the included build README for provenance and validation limits.
+| Folder | Title and background |
+| --- | --- |
+| `SFZ2A_GOLD_Title_Logo_ROM` | Approved GOLD overlay and entrance order, original pink scrolling background |
+| `SFZ2A_GOLD_Final_Arcade_ROM` | Earlier custom Saturn Gold title and custom background |
+| `SFZ2A_GOLD_Original_Logo_ROM` | Original arcade title and pink scrolling background |
 
-**THIS REVISION IS STILL IN BETA. CERTAIN ASPECTS OR MECHANICS TIED TO CAMMY'S CHARACTER HAVE YET TO BE FULLY IMPLEMENTED.**
+All three include the same gameplay fixes. Each contains a ROM named `sfz2ald.zip`.
+
+## What changed
+
+- **Stun voice:** corrected the reversed dizzy and knockout command assignments for both players. Cammy now uses her Gold groan when stunned and her Gold defeat scream when knocked out. Hurt and heavy-hurt commands were also checked.
+- **Being grabbed or thrown:** imported 363 Gold attachment records covering the opponent banks, including ground, air and command-grab poses. The native engine now receives Cammy's proper position, facing, priority and reaction frame when another character grabs her. The already-correct Cammy mirror pairing remains in use.
+- **Character flags and properties:** corrected the contact-distance values' byte order, missing body width, and four attached-effect position entries. The audit also checks identity aliases, base and HUD flags, character callbacks, animation roots, movement, story routes, shared normal/cancel rows, the female stage-interaction predicate, custom-combo hat icons and ending-music binding.
+- **Warning screen:** reproduced the supplied pixel-lettering style in native CPS2 tiles and palettes. The first line reads `This FanGame is a tribute to SFZ2' and not`. The new screen appears after Phoenix for the supported region selections.
+
+The louder revision 30 music, photo-animation grid and timing, stage scrolling, Jessica/Cody interaction and approved title presentations are retained. The QSound driver and sample ROMs are byte-identical to revision 30; this release corrects voice command routing in the main program.
+
+**Phoenix is enabled. USA is the default, and region selection is unlocked.** Existing valid region choices are honored. Hold the test/service input during the Phoenix logo to open its mini-menu; this was F2 in the tested MAME setup.
+
+## Run a variant
+
+Copy one variant's `sfz2ald.zip` into your emulator ROM folder. Keep that inner ZIP intact and start from a **cold boot**. Old save states can restore an earlier ROM program or sound state.
+
+Install one variant at a time; all three use the same ROM-set name. No patch is needed for an included ready-made ROM.
+
+## Apply an IPS instead
+
+Each patch independently upgrades **stock `sfz2ald.zip`** to its matching revision 31 variant. Do not stack patches or apply them to an earlier GOLD build.
+
+The included Python 3 helper verifies the input and output. It also accepts a stock ZIP with identical ROM members but different compression, timestamps or member order:
+
+```sh
+python patches/apply_gold_ips.py patches/SFZ2A_GOLD_Title_Logo_ROM.ips stock/sfz2ald.zip output/sfz2ald.zip
+```
+
+Substitute `SFZ2A_GOLD_Final_Arcade_ROM.ips` or `SFZ2A_GOLD_Original_Logo_ROM.ips` for another presentation. Keep `patch_manifest.json` and the `members` folder beside the helper. Choose a new output path; existing files are not overwritten. Applying patches requires only Python's standard library.
+
+A generic IPS utility must support the final-size extension and patch the **unextracted ZIP bytes**. It requires this exact stock ZIP SHA-256:
+
+`4f7568c92d95033f9da390821c0aa9eec4514dfacffc4f29f3a00add9eeb97b9`
+
+Use the helper when your stock ZIP has different compression or metadata. Expected member and archive hashes are in `patch_manifest.json`; the complete bundle has `SHA256SUMS.txt`.
+
+## Where the material comes from
+
+The project uses the native CPS2 `sfz2ald` arcade engine and the recovered **Street Fighter Alpha Anthology / Alpha 2 Gold** extraction as the source for Cammy's upgrade. The existing backport includes Gold graphics, animation and collision records, character behavior, story resources, voices and music. PS2 MIPS behavior was adapted to Motorola 68000 routines and connected to the arcade engine's native interfaces. Extracted data was converted to the arcade's byte order, character indices, graphics layout and pointer format.
+
+This revision reads Cammy's throw and character-property data from Gold's `game_specific/X_0526.dec`, SHA-256:
+
+`38946309c1a01b3ea0c63465c12e21fdec6a178dcd67e3a12e789f26b59c20c5`
+
+The native Gold groan and knockout samples were already present; the event assignments needed correction. The supplied warning image is a separate user-provided design. Its lettering was recovered at pixel scale and encoded as 87 native Scroll2 tiles.
+
+The ROM runs native CPS2 code and QSound audio. It does not execute the PS2 program or stream external music. Sample capacity remains **4 MiB**, split into `sz2.11m` and `sz2.12m`. This update adds no Alpha 3 samples. Prior music conversion within that capacity remains lossy.
+
+## Verification
+
+Focused checks cover:
+
+- 1,452 M68000 throw-position cases: all 363 imported records, both player sides and both facings, with exact native object-state comparisons and balanced stack handling.
+- Gold pose bindings, unchanged shared-engine fallback paths, and eight voice callback checks across both players.
+- 46 flag/property/callback/animation-root audit entries, plus female interaction, victory-icon and ending-music bindings.
+- Live Ryu throws against player-one and player-two Cammy, and Zangief's Spinning Piledriver; each applies damage and returns Cammy to normal play.
+- Cold boot of every final variant, the corrected warning image, Phoenix startup, fresh USA defaults and a retained Japan selection.
+- Unchanged native ROM capacities, unchanged QSound ROMs, restricted program/graphics changes, ZIP integrity, and exact IPS round trips for all three outputs.
+
+This is an unofficial CPS2 conversion verified in emulation. These checks establish the revision 31 changes; they do not certify every historical backport as frame-perfect or substitute for physical-board testing.
+
+`verification` contains the reports and selected runtime screenshots. `source_update` contains this revision's source, generated data and reproduction notes. The full recovered source checkpoint and previous updates remain the build baseline. Original characters, artwork and music are Capcom's work.
+
+------
 
 This project brings Alpha 2 Gold's Cammy, character data, presentation and story into the native CPS2 version of **Street Fighter Zero 2 Alpha**, using the decrypted `sfz2ald` ROM set. The result runs through the arcade game's own 68000 code, graphics system, inputs and QSound hardware interface. The current release includes the repaired graphics allocation, direct USA boot and removal of the Phoenix startup screen and region selector.
 
