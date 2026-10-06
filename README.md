@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
-# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD v1.0
+# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD v1.1.0
 
 **THIS IS A FANMADE PATCH**
 
@@ -18,9 +18,11 @@ Recommended: extract this package, then run:
 - Pheonix menu re-instated (hold service for 2 seconds when logo appears)
 - Cammy vs Cammy Portrait
 - Cammy's Ending Theme Fixed
+- Fixed Op Throw Mechanism Bug's
+- Fixed HP + BACK Throw Bug
+- Cleaned-up Various Menu Items
 ------
 #KNOWN BUGS
-- Birdie throw mechanism.
 - Cammy dialogue text only in English
 
 #SHOUT OUT TO LUIZ FOR HELPING IDENTIFY BUGS, THANK YOU!
