@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/32588395/README.md)
-# Street Fighter Alpha 2 DASH (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD v1.1.0
+# Street Fighter Zero 2 Alpha (GOLD) — CPS2 Arcade Reconstruction. Stock sfz2ald to GOLD v1.1.0
 
 **THIS IS A FANMADE PATCH**
 
