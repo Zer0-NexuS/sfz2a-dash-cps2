@@ -3,7 +3,13 @@
 
 **THIS IS A FANMADE PATCH**
 
-Recommended: extract this package, then run:
+Instructions:
+1. Download sfz2ag-patcher.zip, extract exe.
+2. Double-click it to open.
+3. Drag your original sfz2ald.zip into the window. Do not unzip it.
+4. Click Create GOLD ROM and wait. Stay connected to the internet.
+5. Click Open folder when finished. Your upgraded sfz2ald.zip will be there.
+Default save location: Desktop → SFZ2AG GOLD.
 
 #FIXED in RC2:
 - Shin Akuma (On Akuma, Tap Start Once)
