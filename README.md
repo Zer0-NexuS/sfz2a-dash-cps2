@@ -248,3 +248,22 @@ Do not regenerate the current builder with `analysis/create_gold_builder.py`; th
 The IPS package additionally includes `patch_manifest.json`, source provenance records and `PATCH_VERIFICATION.json`. The direct ZIP patch and all 16 member patches were independently applied with the unmodified Floating IPS IPS engine and matched the released outputs. The helper reproduced the complete Test 15 ZIP from both the exact stock archive and a repacked archive on the validation host. Wrong revisions, incomplete sets, already-GOLD inputs, in-place writes and existing output files were rejected. Python workflows were exercised on Linux; the Windows launcher was not separately run on Windows.
 
 These checks establish the exact stock-to-Test-15 transformation separately from the game's historical runtime tests. This README/patch release packages the existing Test 15 ROM; it does not change gameplay or create a new game revision.
+
+Credits:
+
+Tool / project	What we used it for
+MAME	Custom drivers, hardware emulation, ROM audits, debugging, tracing, captures, and performance analysis.
+FinalBurn Neo (FBNeo)	Reference emulation, compatibility checks, and instrumented CPU/video/audio tracing.
+MAME 2010 libretro core	Earlier combat, character-selection, and regression testing, including SFZ2A GOLD.
+MAME Lua scripting	Automated inputs, memory observation, execution probes, and repeatable tests.
+chdman — MAME tools	Extracting and inspecting CHD donor discs.
+GNU GCC / G++ and Binutils	Emulator builds and native 68000 assembly/build work.
+MinGW-w64	Building Windows executables.
+LLVM lld	Linking particular Windows MAME builds.
+GENie	Generating MAME build projects.
+GNU Make	Building emulators and supporting tools.
+Python	ROM reconstruction, relocation, graphics/audio conversion, patch generation, and audits.
+NumPy / SciPy	Numerical checks and captured-audio analysis.
+
+
+FBNeo’s correct credit name is FinalBurn Neo; chdman belongs to the MAME project.
